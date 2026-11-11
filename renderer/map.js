@@ -99,6 +99,9 @@ function mapTab() {
     const x = canvas.getContext('2d');
     x.imageSmoothingEnabled = false;
     x.drawImage(mapUI.img, 0, 0, W, MAP_ROWS, 0, 0, W * Z, MAP_ROWS * Z);
+    // the picture's outer 20 columns on each side are blank white and are cropped away by the page; paint them with the neighbouring map column so a hairline of white can never show at the edge
+    x.drawImage(mapUI.img, 20, 0, 1, MAP_ROWS, 0, 0, 20 * Z, MAP_ROWS * Z);
+    x.drawImage(mapUI.img, 235, 0, 1, MAP_ROWS, 236 * Z, 0, (W - 236) * Z, MAP_ROWS * Z);
     const lit = id => id != null && (id === mapUI.hoverPlace || id === mapUI.active);
     for (let i = 0; i < seg.label.length; i++) {
       const l = seg.label[i];

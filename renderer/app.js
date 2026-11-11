@@ -79,11 +79,14 @@ function render() {
   document.getElementById('folder').textContent = data ? data.gameDir : '';
   updateTicker();
   fit();
+  // redrawing the same page (a filter was clicked, or new data came in) must not throw the reader back to the top
+  const keepScroll = view.dataset.page === tab + ':' + (subPick[tab] || '') ? view.scrollTop : 0;
   view.replaceChildren();
   if (!data) return view.append(el('div', { class: 'empty' }, 'Loading…'));
   if (data.missing) { view.dataset.page = 'setup'; return view.append(setupGuide()); }
   view.dataset.page = tab + ':' + (subPick[tab] || '');
   view.append(tabView());
+  if (keepScroll) view.scrollTop = keepScroll;
   if (tab === 'overview') countUp();
 }
 function renderAll() { worldBar(); render(); }
