@@ -59,6 +59,12 @@
       "shortcutName": "Platinum Together Stat Tracker",
       "deleteAppDataOnUninstall": false,
       "artifactName": "PlatinumTogether-StatTracker-${version}-Setup.${ext}"
-    }
+    },
+    "extraFiles": [
+      {
+        "from": "extras/Create-Shortcut.bat",
+        "to": "."
+      }
+    ]
   }
 }

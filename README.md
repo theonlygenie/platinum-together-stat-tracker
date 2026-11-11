@@ -15,6 +15,7 @@ Windows 10/11, 64-bit. You need Platinum Together installed on the same PC.
 1. Go to the [Releases](../../releases) page and download **`PlatinumTogether-StatTracker-…-portable.zip`**. (GitHub also lists "Source code" files on every release. You do not need those.)
 2. Unzip it anywhere you like (not into `Program Files`) and run **Platinum Together Stat Tracker.exe**.
 3. On first open the app walks you through choosing your game folder (the one with `Platinum.exe` in it, usually called `Game`).
+4. Optional: double-click **Create-Shortcut.bat** (it is in the same folder) to put a shortcut on your Desktop. It only creates that one shortcut. To remove it later, delete the shortcut and the folder.
 
 ### If Windows blocks it
 
