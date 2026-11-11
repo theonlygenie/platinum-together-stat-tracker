@@ -42,7 +42,7 @@ function overview() {
   const rel = Object.entries((data.released && data.released.worlds) || {}).filter(([w]) => filter === ALL || w === filter)
     .flatMap(([, v]) => v.left).sort((a, b) => b.when.localeCompare(a.when));
   // Opening view: one hero (the active world and the four numbers that matter most), then everything else as small quiet tiles.
-  const hero = el('div', { class: 'ovhero' },
+  const hero = el('div', { class: 'ovhero' + (data.worldCard ? '' : ' nohero') },
     data.worldCard ? worldCard() : null,
     stat('yellow', 3, 1, 'Wild encounters', fmt(t.wild)),
     stat('lime', 3, 1, 'Pokémon caught', fmt(t.catches), `${pct(t.catches, t.wild)} of encounters`),

@@ -525,3 +525,7 @@ html.themed .stat{--outline:color-mix(in srgb,var(--ink) 24%,var(--page))}
 /* "Poke Journal" stays on one line and scales with the rail */
 .rail{container-type:inline-size}
 .rail .brand{font-size:min(21px,10.2cqw)}
+
+/* no world card (nothing to show for it yet): let the four tiles take the space they need instead of leaving a gap */
+.ovhero.nohero{height:auto;grid-template-rows:none}
+.ovhero.nohero .stat{min-height:150px}
