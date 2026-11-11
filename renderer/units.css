@@ -520,3 +520,8 @@ html.themed .stat{--outline:color-mix(in srgb,var(--ink) 24%,var(--page))}
 .wikibtns{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 8px}
 /* the Settings panel stays inside the window and scrolls when there is more of it than fits */
 .rail #infopanel{max-height:calc(100vh - 32px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--ink,#000) 35%,transparent) transparent}
+.rail .brand{white-space:nowrap}
+.rail .brand span{white-space:normal;font-size:min(15px,8.4cqw)}
+/* "Poke Journal" stays on one line and scales with the rail */
+.rail{container-type:inline-size}
+.rail .brand{font-size:min(21px,10.2cqw)}
