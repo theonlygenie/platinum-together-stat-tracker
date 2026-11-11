@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:">
+<title>Platinum Together Stat Tracker</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="units.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<div id="intro" aria-hidden="true">
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="ball2"><circle cx="24" cy="24" r="22"/></clipPath>
+      <linearGradient id="top2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a4f"/><stop offset="1" stop-color="#d62839"/></linearGradient>
+    </defs>
+    <g clip-path="url(#ball2)">
+      <rect x="0" y="0" width="48" height="24" fill="url(#top2)"/>
+      <rect x="0" y="24" width="48" height="24" fill="#f4f1ea"/>
+      <rect x="0" y="21" width="48" height="6" fill="#14110f"/>
+    </g>
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#14110f" stroke-width="3"/>
+    <circle cx="24" cy="24" r="9.5" fill="#f4f1ea" stroke="#14110f" stroke-width="3"/>
+  </svg>
+</div>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="ball"><circle cx="24" cy="24" r="22"/></clipPath>
+            <linearGradient id="top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a4f"/><stop offset="1" stop-color="#d62839"/></linearGradient>
+          </defs>
+          <g clip-path="url(#ball)">
+            <rect x="0" y="0" width="48" height="24" fill="url(#top)"/>
+            <rect x="0" y="24" width="48" height="24" fill="#f4f1ea"/>
+            <rect x="0" y="21" width="48" height="6" fill="#14110f"/>
+            <path d="M9 17 A16 16 0 0 1 20 8" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+          </g>
+          <circle cx="24" cy="24" r="22" fill="none" stroke="#14110f" stroke-width="3"/>
+          <circle cx="24" cy="24" r="9.5" fill="#f4f1ea" stroke="#14110f" stroke-width="3"/>
+          <text x="24" y="27.6" text-anchor="middle" font-size="10.5" font-weight="800" fill="#14110f" font-family="Bahnschrift, 'Segoe UI', sans-serif" letter-spacing="-.3">PT</text>
+        </svg>
+      </span>
+      Platinum<br>Together<span>Stat Tracker</span>
+    </div>
+    <nav id="tabs">
+      <button class="on" data-tab="overview"><i class="no">01</i><i class="arr">↗</i><span class="lab">Overview</span></button>
+      <button data-tab="stats"><i class="no">02</i><i class="arr">↗</i><span class="lab">Stats</span></button>
+      <button data-tab="collection"><i class="no">03</i><i class="arr">↗</i><span class="lab">Collection</span></button>
+      <button data-tab="catching"><i class="no">04</i><i class="arr">↗</i><span class="lab">Catching</span></button>
+      <button data-tab="map"><i class="no">05</i><i class="arr">↗</i><span class="lab">Map</span></button>
+    </nav>
+    <div class="actions">
+      <button class="pill" id="refresh">Refresh</button>
+      <button class="pill ghost" id="pick">Game folder</button>
+      <button class="pill ghost" id="info" aria-expanded="false" title="Theme, motion, archive and what this app reads">Settings</button>
+      <div id="infopanel" hidden>
+        <h4>Game folder</h4>
+        <p id="folder"></p>
+        <h4>Keep my own copy</h4>
+        <p id="archnote"></p>
+        <button class="pill ghost" id="archbtn">Turn on</button>
+        <p id="snapnote"></p>
+        <button class="pill ghost" id="snapbtn">Turn on</button>
+        <h4>Wiki data</h4>
+        <p id="wikinote"></p>
+        <div class="wikibtns"><button class="pill ghost" id="wikicheck">Check now</button><button class="pill ghost" id="wikibtn">Turn off</button></div>
+        <h4>Theme</h4>
+        <div class="themebtns"></div>
+        <div class="themecustom" hidden><label>Background <input type="color" id="thbg" value="#252423"></label><label>Accent <input type="color" id="thacc" value="#e2543b"></label></div>
+        <h4>Motion</h4>
+        <button class="pill ghost" id="motbtn">Motion: full</button>
+        <p id="motnote">Reduced turns off smooth scrolling, the rise-in effect, the ticker and the 3D chart’s turning.</p>
+        <h4>Read-only</h4>
+        <p>This app only reads your logs, saves and encounter files. It never changes the game. Counts come from what the game logs and from your save.</p>
+      </div>
+    </div>
+  </aside>
+  <section class="stage">
+    <div id="worldbar"></div>
+    <div id="ticker" class="ticker" aria-hidden="true"></div>
+    <main id="view"></main>
+  </section>
+</div>
+<script src="core.js"></script>
+<script src="overview.js"></script>
+<script src="catching.js"></script>
+<script src="stats.js"></script>
+<script src="map-base.js"></script>
+<script src="spawns.js"></script>
+<script src="map.js"></script>
+<script src="trends.js"></script>
+<script src="collection.js"></script>
+<script src="sessions.js"></script>
+<script src="app.js"></script>
+<script src="fx.js"></script>
+</body>
+</html>

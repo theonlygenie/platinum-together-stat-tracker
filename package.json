@@ -1,0 +1,64 @@
+{
+  "name": "platinum-stat-tracker",
+  "version": "0.1.0",
+  "productName": "Platinum Together Stat Tracker",
+  "description": "Read-only statistics viewer for Platinum Together",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^33.2.1",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "online.platinumtogether.stattracker",
+    "productName": "Platinum Together Stat Tracker",
+    "copyright": "Fan-made, read-only stat viewer",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "parser.js",
+      "spawns-build.js",
+      "wiki-updater.js",
+      "species.json",
+      "icon.ico",
+      "package.json",
+      "renderer/**/*",
+      "data/**/*"
+    ],
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Platinum Together Stat Tracker",
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "PlatinumTogether-StatTracker-${version}-Setup.${ext}"
+    }
+  }
+}
