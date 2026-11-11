@@ -170,7 +170,7 @@ select option{color:#14110f;background:#fff}
 .card::after{display:none}
 .tile h3,.stat .num{transition:transform .4s cubic-bezier(.2,.9,.25,1.2)}
 .stat:hover .num{transform:scale(1.08);transform-origin:right bottom}
-.tile:hover h3{transform:translateX(4px)}
+/* (the card title no longer slides on hover: it made the title jump whenever a filter redrew the card under the cursor) */
 .row{transition:background .25s ease}
 .row:not(.head):hover{background:#00000010}
 .row .bar{transition:transform .3s ease}
