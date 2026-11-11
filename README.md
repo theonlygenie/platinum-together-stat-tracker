@@ -12,11 +12,9 @@ Windows 10/11, 64-bit. You need Platinum Together installed on the same PC.
 
 ## Install (unzip and run)
 
-1. Go to the [Releases](../../releases) page and download **`…-portable.zip`**.
+1. Go to the [Releases](../../releases) page and download **`PlatinumTogether-StatTracker-…-portable.zip`**. (GitHub also lists "Source code" files on every release. You do not need those.)
 2. Unzip it anywhere you like (not into `Program Files`) and run **Platinum Together Stat Tracker.exe**.
 3. On first open the app walks you through choosing your game folder (the one with `Platinum.exe` in it, usually called `Game`).
-
-There is also a `…-Setup.exe` installer if you would rather have Start Menu and Desktop shortcuts. It installs for your user only, with no admin prompt.
 
 ### If Windows blocks it
 
@@ -51,7 +49,7 @@ Please [open an issue](../../issues/new/choose). A screenshot helps a lot. Pleas
 ```
 npm install
 npm start            # run from source
-npm run dist:win     # builds the installer and zip into release/
+npm run dist:win     # builds the zip (and an installer) into release/
 ```
 
 ## Credits
