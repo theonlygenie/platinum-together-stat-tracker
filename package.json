@@ -31,7 +31,8 @@
       "icon.ico",
       "package.json",
       "renderer/**/*",
-      "data/**/*"
+      "data/**/*",
+      "species-extra.json"
     ],
     "win": {
       "icon": "icon.ico",

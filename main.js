@@ -300,6 +300,8 @@ spawnTables = wiki.tables().t;
 // Dex number -> name, shipped with the app (species.json).
 let speciesNames = {};
 try { speciesNames = JSON.parse(fs.readFileSync(path.join(__dirname, 'species.json'), 'utf8')); } catch {}
+// Names for the numbers above 493 (the game's own extra species), confirmed against the wiki. Anything a player types on a Pokédex card still wins.
+try { Object.assign(speciesNames, JSON.parse(fs.readFileSync(path.join(__dirname, 'species-extra.json'), 'utf8'))); } catch {}
 
 app.whenReady().then(() => {
   ipcMain.handle('stats:load', () => snapshot(readSettings().gameDir || defaultDir));
