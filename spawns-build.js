@@ -18,6 +18,9 @@ function build(W, names) {
   const num = {}, missing = [];
   for (const sp of W.species) { const n = numByName[norm(sp.name)]; if (n != null) num[sp.id] = n; else missing.push(sp.name); }
   const N = id => num[id];
+  // with the species names missing nothing matches and every place ends up with an empty list, which looks valid but marks every catch as unusual
+  const matched = Object.keys(num).length;
+  if (matched < 300) throw new Error('only ' + matched + ' wiki species could be matched by name, so the species names are probably missing');
 
   const places = {};
   for (const x of W.wild) {
@@ -40,7 +43,7 @@ function build(W, names) {
 
   const out = {
     source: `platinumtogether.online wiki (${W.source}, v${W.version})`,
-    wikiSource: String(W.source || ''), wikiVersion: String(W.version || ''),
+    wikiSource: String(W.source || ''), wikiVersion: String(W.version || ''), matched,
     built: new Date().toISOString().slice(0, 10),
     places: Object.fromEntries(Object.entries(places).map(([g, p]) => [g, { level: p.level, normal: [...p.normal].sort((a, b) => a - b), special: [...p.special].sort((a, b) => a - b) }])),
     rare: Object.entries(rareTiers).map(([lv, set]) => [+lv, [...set].sort((a, b) => a - b)]).sort((a, b) => a[0] - b[0]),
