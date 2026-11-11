@@ -1,4 +1,4 @@
-# Platinum Together Stat Tracker
+# PT Journal
 
 > **Public beta.** This is an early version and I'd love your help testing it. See [Help test it](#help-test-it) below.
 
@@ -12,8 +12,8 @@ Windows 10/11, 64-bit. You need Platinum Together installed on the same PC.
 
 ## Install (unzip and run)
 
-1. Go to the [Releases](../../releases) page and download **`PlatinumTogether-StatTracker-…-portable.zip`**. (GitHub also lists "Source code" files on every release. You do not need those.)
-2. Unzip it anywhere you like (not into `Program Files`) and run **Platinum Together Stat Tracker.exe**.
+1. Go to the [Releases](../../releases) page and download **`PTJournal-…-portable.zip`**. (GitHub also lists "Source code" files on every release. You do not need those.)
+2. Unzip it anywhere you like (not into `Program Files`) and run **PT Journal.exe**.
 3. On first open the app walks you through choosing your game folder (the one with `Platinum.exe` in it, usually called `Game`).
 4. Optional: double-click **Create-Shortcut.bat** (it is in the same folder) to put a shortcut on your Desktop. It only creates that one shortcut. To remove it later, delete the shortcut and the folder.
 

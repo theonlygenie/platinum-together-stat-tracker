@@ -1,7 +1,7 @@
 {
-  "name": "platinum-stat-tracker",
+  "name": "pt-journal",
   "version": "0.1.0",
-  "productName": "Platinum Together Stat Tracker",
+  "productName": "PT Journal",
   "description": "Read-only statistics viewer for Platinum Together",
   "main": "main.js",
   "private": true,
@@ -15,8 +15,8 @@
     "electron-builder": "^26.18.0"
   },
   "build": {
-    "appId": "online.platinumtogether.stattracker",
-    "productName": "Platinum Together Stat Tracker",
+    "appId": "online.platinumtogether.ptjournal",
+    "productName": "PT Journal",
     "copyright": "Fan-made, read-only stat viewer",
     "directories": {
       "output": "release"
@@ -56,9 +56,9 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Platinum Together Stat Tracker",
+      "shortcutName": "PT Journal",
       "deleteAppDataOnUninstall": false,
-      "artifactName": "PlatinumTogether-StatTracker-${version}-Setup.${ext}"
+      "artifactName": "PTJournal-${version}-Setup.${ext}"
     },
     "extraFiles": [
       {

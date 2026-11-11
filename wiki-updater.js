@@ -43,7 +43,7 @@ function createWikiUpdater({ userData, bundledFile, getGameDir, getNames, getOn,
     busy = true;
     const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), TIMEOUT);
     try {
-      const headers = { 'User-Agent': 'PlatinumTogetherStatTracker', Accept: 'application/json' };
+      const headers = { 'User-Agent': 'PTJournal', Accept: 'application/json' };
       if (!opts.force && state.etag && !tables().shipped) headers['If-None-Match'] = state.etag;
       const res = await net.fetch(URL_, { headers, signal: ctl.signal });
       if (res.url && new URL(res.url).hostname !== 'platinumtogether.online') throw new Error('redirected to another site');

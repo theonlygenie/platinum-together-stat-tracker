@@ -330,7 +330,7 @@ app.whenReady().then(() => {
     writeSettings(s);
   });
   const win = new BrowserWindow({
-    width: 1150, height: 800, minWidth: 820, minHeight: 560, backgroundColor: '#f4e9e1', title: 'Platinum Together Stat Tracker', icon: path.join(__dirname, 'icon.ico'),
+    width: 1150, height: 800, minWidth: 820, minHeight: 560, backgroundColor: '#f4e9e1', title: 'PT Journal', icon: path.join(__dirname, 'icon.ico'),
     webPreferences: { preload: path.join(__dirname, 'preload.js'), contextIsolation: true, nodeIntegration: false },
   });
   win.setMenuBarVisibility(false);
