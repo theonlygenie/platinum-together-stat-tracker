@@ -6,7 +6,7 @@ A free, fan-made desktop app that shows your stats from **Platinum Together**: e
 your Pokédex (Sinnoh / National / PT), items, a map of where you caught things, trainer card, and more.
 
 **It is read-only.** It only reads your game's logs, saves and encounter files. It never writes to or changes the game folder.
-Anything it keeps (settings, optional log archive) lives in its own folder under `%APPDATA%\platinum-stat-tracker`.
+Anything it keeps (settings, optional log archive) lives in its own folder under `%APPDATA%\pt-journal`.
 
 Windows 10/11, 64-bit. You need Platinum Together installed on the same PC.
 

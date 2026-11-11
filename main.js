@@ -15,7 +15,15 @@ function findGameDir() {
 const defaultDir = findGameDir();
 
 // Keep settings (game folder, world tags) in one fixed place, whatever the app is called.
-app.setPath('userData', path.join(app.getPath('appData'), 'platinum-stat-tracker'));
+// The app's own folder is "pt-journal". Earlier versions used "platinum-stat-tracker": the first time this version runs, that folder is moved
+// across (or copied if it is in use), so settings, the log archive and everything else carry over. If anything goes wrong the old folder is used.
+const dataDir = path.join(app.getPath('appData'), 'pt-journal'), oldDataDir = path.join(app.getPath('appData'), 'platinum-stat-tracker');
+try {
+  if (!fs.existsSync(dataDir) && fs.existsSync(oldDataDir)) {
+    try { fs.renameSync(oldDataDir, dataDir); } catch { fs.cpSync(oldDataDir, dataDir, { recursive: true }); }
+  }
+} catch {}
+app.setPath('userData', fs.existsSync(dataDir) || !fs.existsSync(oldDataDir) ? dataDir : oldDataDir);
 const settingsFile = () => path.join(app.getPath('userData'), 'settings.json');
 
 // The app's own settings (game folder, which world each session belongs to). Never inside the game folder.

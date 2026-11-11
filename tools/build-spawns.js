@@ -9,7 +9,7 @@ const W = JSON.parse(fs.readFileSync(wikiFile, 'utf8'));
 if (!looksLikeWiki(W)) { console.error('that does not look like the wiki data file'); process.exit(1); }
 const root = path.join(__dirname, '..');
 const names = JSON.parse(fs.readFileSync(path.join(root, 'species.json'), 'utf8'));
-try { Object.assign(names, JSON.parse(fs.readFileSync(path.join(process.env.APPDATA || '', 'platinum-stat-tracker', 'species-custom.json'), 'utf8'))); } catch {}
+try { Object.assign(names, JSON.parse(fs.readFileSync(path.join(process.env.APPDATA || '', 'pt-journal', 'species-custom.json'), 'utf8'))); } catch {}
 const { out, missing } = build(W, names);
 fs.mkdirSync(path.join(root, 'data'), { recursive: true });
 fs.writeFileSync(path.join(root, 'data', 'wiki-spawns.json'), JSON.stringify(out));
