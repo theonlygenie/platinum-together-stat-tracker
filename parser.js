@@ -124,7 +124,11 @@ function readTrainer(file) {
   if (buf.length < 0x42000) return null;
   const tid = buf.readUInt16LE(0x84), sid = buf.readUInt16LE(0x86), money = buf.readUInt32LE(0x88);
   if (money > 999999) return null;
-  return { tid, sid, money, gender: buf[0x8c] === 1 ? 'F' : 'M' };
+  // name (0x74), badges (a bit each at 0x8e) and play time (hours 0x96, minutes 0x98) are read the same way, as a backup for world-card.ini
+  let name = '';
+  for (let i = 0; i < 8; i++) { const c = buf.readUInt16LE(0x74 + i * 2); if (c === 0xffff) break; name += NICK_CHAR(c); }
+  let badges = 0; for (let v = buf[0x8e]; v; v >>= 1) badges += v & 1;
+  return { tid, sid, money, gender: buf[0x8c] === 1 ? 'F' : 'M', name, badges, hours: buf.readUInt16LE(0x96), minutes: buf[0x98] };
 }
 
 // A world's own settings, from its world.ini. READ-ONLY. The file is plain "key=value" lines the game keeps; only the numbers are read
